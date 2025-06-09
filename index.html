@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/responsive.css">
+    <script src="./src/js/script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <title>Portfólio</title>
+</head>
+<body>
+  <header class="header">
+        <button class="home" onclick="scrollToSection('home')">Home</button>
+        <button class="about" onclick="scrollToSection('about')">About</button>
+        <button class="projects" onclick="scrollToSection('projects')">Projects</button>
+        <button class="contact" onclick="scrollToSection('contact')">Contact</button>
+  </header>
+
+  <div id="home" class="card">
+  <div class="content">
+    <h1>Oioi, aqui é Mário</h1>
+    <h2>Front-end developer viciado na lore de Destiny 2</h2>
+    <p>
+      Foco em criar interfaces claras, acessíveis e eficientes. Unindo código e design para transformar projetos em experiências agradáveis e intuitivas para quem usa.
+    </p>
+    <div class="actions">
+      <a href="./src/images/Currículo uppdate.pdf" target="_blank"><button>Resume</button></a>
+      <div class="icons">
+        <a href="https://github.com/Kindacid" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+        <a href="https://linkedin.com/in/mariosvieiraf" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+        <a href="mailto:mariosvfelix@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope fa-2x"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="image">
+    <img src="./src/images/WhatsApp Image 2025-06-09 at 13.10.16.jpeg" alt="About Mário" />
+  </div>
+  </div>
+
+  <div id="about" class="experience-container">
+
+  <div class="tabs">
+    <button class="tab active" onclick="showExperience('work', this)">Work</button>
+    <button class="tab" onclick="showExperience('studies', this)">Studies</button>
+  </div>
+
+  <div class="experience-content" id="experience-content">
+    <div class="experience-item">
+      <div class="circle">
+        <img src="https://img.freepik.com/vetores-gratis/design-de-icone-de-lotus-de-logotipo-empresarial_53876-115927.jpg?semt=ais_hybrid&w=740" alt="Logo" />
+      </div>
+      <div class="text-box">
+        <p>Freelancer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2022-Atualmente<br>Atuando principalemnte com Design Gráfico e Designs UX e UI</p>
+      </div>
+    </div>
+
+    <div class="experience-item">
+      <div class="circle">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSACS_ExZ_fMf2Fqa3X6i2YwfqWbyNgvowpew&s" alt="Logo" />
+      </div>
+      <div class="text-box">
+        <p>Foundever &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2024-Atualmente<br>Responsável por suporte interno, atualização de planilhas e auxílio na organização e coordenação de equipes</p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div id="projects" class="projects-section">
+  <div class="project-card">
+    <div class="project-image">
+      <img src="./src/images/venus_logo-playstore.png" alt="Imagem do Projeto">
+    </div>
+    <div class="project-info">
+      <h2>Venus</h2>
+      <a class="project-btn" href="project-page.html?id=venus">About</a>
+
+      <p>Aplicativo Android para organização de dados, livros como base, integrado a banco de dados Firebase. Desenvolvido em Java, permitindo cadastro, consulta e gerenciamento simples.</p>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-image">
+      <img src="./src/images/_195d3d15-fcd9-40ef-a0e8-414f373c18f0.jpeg" alt="Imagem do Projeto">
+    </div>
+    <div class="project-info">
+      <h2>AI Therapist</h2>
+      <a class="project-btn" href="project-page.html?id=ai-therapist">About</a>
+
+      <p>Site de conversa que utiliza OpenAI para simular terapeutas e introduzir o usuário a dinâmicas terapêuticas. Não substitui acompanhamento profissional.</p>
+    </div>
+  </div>
+
+  <div class="more-link"><p>Veja mais...</p></div>
+  </div>
+
+  <div class="stack">
+  <h2>My Stack</h2>
+
+  <div class="tech-grid">
+    <span class="tech-item"><i class="devicon-java-plain colored"></i>Java</span>
+    <span class="tech-item"><i class="devicon-html5-plain colored"></i>HTML</span>
+    <span class="tech-item"><i class="devicon-css3-plain colored"></i>CSS</span>
+    <span class="tech-item"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+    <span class="tech-item"><i class="devicon-react-original colored"></i>React</span>
+    <span class="tech-item"><i class="devicon-figma-plain colored"></i>Figma</span>
+    <span class="tech-item"><i class="devicon-illustrator-plain colored"></i>Illustrator</span>
+    <span class="tech-item"><i class="devicon-git-plain colored"></i>Git</span>
+    <span class="tech-item"><i class="devicon-github-original colored"></i>GitHub</span>
+    <span class="tech-item"><i class="devicon-ai-plain colored"></i>ChatGPT</span>
+    <span class="tech-item"><i class="devicon-androidstudio-plain colored"></i>Android Studio</span>
+    <span class="tech-item"><i class="devicon-firebase-plain colored"></i>Firebase</span>
+  </div>
+  </div>
+
+  <footer class="footer-container">
+  <div id="contact" class="footer-name">
+    <h1>Mário<br />Vieira</h1>
+  </div>
+  <div class="footer-contact">
+    <h2>Let's Connect!</h2>
+    <ul>
+      <li><a href="mailto:mariosvfelix@gmail.com">Email</a></li>
+      <li><a href="https://www.linkedin.com/in/mariosvieiraf" target="_blank">Linkedin</a></li>
+      <li><a href="https://github.com/Kindacid" target="_blank">GitHub</a></li>
+    </ul>
+  </div>
+  </footer>
+</body>
+</html>
