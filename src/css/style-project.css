@@ -1,0 +1,140 @@
+/* GUIA NAVEGAÇÃO */
+.header {
+  display: flex;
+  position: fixed;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.header button {
+  color: white;
+  cursor: pointer;
+  margin: 0 0 0 27px;
+  height: 110px;
+  width: 320px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  background-color: rgb(217, 217, 217, 0.1);
+}
+
+.header button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.header button.home {
+  border-radius: 20px 0px 0px 20px;
+}
+
+.header button.contact {
+  border-radius: 0px 20px 20px 0px;
+}
+
+/* SOBRE */
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 40px;
+  max-width: 1000px;
+  width: 90%;
+  margin: 350px auto;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  background-color: rgb(217, 217, 217, 0.1);
+}
+
+.content{
+    max-width: 75%;
+    text-align: center;
+}
+.content p{
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+.content h1 {
+  margin-bottom: 15px;
+}
+
+.content h2 {
+  margin-bottom: 30px;
+}
+
+.actions {
+  display: flex;
+  margin-top: auto;
+  gap: 20px;
+}
+
+.actions a {
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.actions a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  
+}
+
+/* FUNDO */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  background: conic-gradient(from 181.67deg at 50% 50%, rgba(0, 255, 47, 0.19) -141.92deg, rgba(255, 0, 251, 0.17) 108deg, rgba(0, 255, 47, 0.19) 218.08deg, rgba(255, 0, 251, 0.17) 468deg), #15151c;
+  cursor: default;
+  overflow-x: hidden;
+}
+
+/* TEXTO */
+p, h1, h2 {
+  font-family: "Tinos", serif;
+  color: white;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 45px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+button, i, a {
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 25px;
+}

@@ -1,0 +1,98 @@
+@media (max-width: 1652px){
+  .card
+   {
+	width: 60%;
+  }
+}
+
+@media (max-width: 1395px){
+  .header{
+    width: 80%;
+    margin-right: 28px;
+  }
+}
+
+@media (max-width: 1080px){
+  .card
+   {
+    width: 80%;
+  }
+  .project-card {
+    margin-top: 100px;
+  }
+}
+
+@media (max-width: 1015px){
+  .card
+   {
+    width: 90%;
+  }
+  .project-card {
+    margin-top: 50px;
+    margin-right: 29px;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px){
+  .experience-container
+   {
+    width: 80%;
+    margin-right: 29px;
+}
+
+    .footer-container {
+        width: 80%;
+        gap: 20%;
+    }
+}
+
+@media (max-width: 600px){
+  .experience-container
+   {
+    width: 90%;
+    margin-right: 29px;
+}
+
+    .footer-container {
+        width: 90%;
+        gap: 20%;
+    }
+
+    .card {
+    flex-direction: column;
+    width: 90%;
+    margin-top: 200px;
+    margin-bottom: 200px;
+  }
+
+  .content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .content p {
+    margin-top: 20px; /* Remove margem gigante */
+    text-align: justify;
+  }
+
+  .image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media(max-width:375px){
+  .actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .icons {
+    gap: 20px; /* diminui o espaço entre os ícones */
+    margin-left: 0; /* remove o deslocamento lateral */
+    justify-content: center;
+  }
+}
