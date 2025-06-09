@@ -95,7 +95,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 430px) {
   .actions {
     flex-direction: column;
     align-items: center;
