@@ -8,7 +8,7 @@ const projetos = {
   },
   'ai-therapist': {
     nome: 'AI Therapist',
-    imagem: 'src/images/_195d3d15-fcd9-40ef-a0e8-414f373c18f0.jpeg',
+    imagem: 'src/images/aitherapist-logo.jpeg',
     tecnologias: 'OpenAI API · JavaScript · HTML · CSS',
     descricao: 'Projeto em parceria com alguns colegas da faculdade. Site de conversa que utiliza da API da OpenAI para simular terapeutas e introduzir o usuário a dinâmicas terapêuticas. Não substitui acompanhamento profissional.',
     github: 'https://github.com/meldeoz/A3-git-projeto'
