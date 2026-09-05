@@ -1,142 +1,597 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/css/style.css">
-    <link rel="stylesheet" href="./src/css/reset.css">
-    <link rel="stylesheet" href="./src/css/responsive.css">
-    <script src="./src/js/script.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mário Vieira — Analista de Dados e Dev</title>
+  <meta name="description" content="Mário Vieira — Analista de Dados e Desenvolvedor. Dashboards, automações e aplicações web e Android." />
 
-    <title>Portfólio</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Mário Vieira — Analista de Dados e Dev" />
+  <meta property="og:description" content="Mário Vieira — Analista de Dados e Desenvolvedor. Dashboards, automações e aplicações web e Android." />
+
+  <meta name="theme-color" content="#0A0A0C" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F5F2FA" media="(prefers-color-scheme: light)" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Great+Vibes&display=swap" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+
+  <script>
+    /* Apply the saved theme before first paint to avoid a flash of the
+       wrong theme. Kept inline and tiny on purpose — everything else
+       lives in js/theme.js. */
+    (function () {
+      try {
+        var saved = localStorage.getItem("mv-theme");
+        document.documentElement.dataset.theme = saved === "light" ? "light" : "dark";
+      } catch (err) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    })();
+  </script>
+
+  <script src="js/theme.js" defer></script>
+  <script src="js/reveal.js" defer></script>
+  <script src="js/scroll.js" defer></script>
 </head>
 <body>
-  <header class="header">
-        <button class="home" onclick="scrollToSection('home')">Home</button>
-        <button class="about" onclick="scrollToSection('about')">About</button>
-        <button class="projects" onclick="scrollToSection('projects')">Projects</button>
-        <button class="contact" onclick="scrollToSection('contact')">Contact</button>
-  </header>
 
-  <div id="home" class="card">
-  <div class="content">
-    <h1>Oioi, aqui é Mário</h1>
-    <h2>Front-end developer viciado na lore de Destiny 2</h2>
-    <p>
-      Foco em criar interfaces claras, acessíveis e eficientes. Unindo código e design para transformar projetos em experiências agradáveis e intuitivas para quem usa.
-    </p>
-    <div class="actions">
-      <a href="./src/images/Currículo uppdate.pdf" target="_blank"><button>Resume</button></a>
-      <div class="icons">
-        <a href="https://github.com/Kindacid" target="_blank" aria-label="GitHub">
-          <i class="fab fa-github fa-2x"></i>
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__blob ambient__blob--1" data-par="0.10"></div>
+    <div class="ambient__blob ambient__blob--2" data-par="-0.16"></div>
+    <div class="ambient__blob ambient__blob--3" data-par="0.22"></div>
+  </div>
+
+  <div class="page">
+
+    <header class="site-header">
+      <nav class="navbar" aria-label="Navegação principal">
+        <a href="#inicio" class="wordmark wordmark--sm">
+          <span class="wordmark__avatar" aria-hidden="true">MV</span>
+          <span class="wordmark__text">
+            <span class="wordmark__name">Mário Vieira</span>
+            <span class="wordmark__role">Analista de Dados &amp; Dev</span>
+          </span>
         </a>
-        <a href="https://linkedin.com/in/mariosvieiraf" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin fa-2x"></i>
-        </a>
-        <a href="mailto:mariosvfelix@gmail.com" aria-label="Email">
-          <i class="fas fa-envelope fa-2x"></i>
-        </a>
+        <ul class="navbar__links">
+          <li><a href="#inicio" class="navbar__link">Início</a></li>
+          <li><a href="#sobre" class="navbar__link">Sobre</a></li>
+          <li><a href="#experiencia" class="navbar__link">Experiência</a></li>
+          <li><a href="#estudos" class="navbar__link">Estudos</a></li>
+          <li><a href="#stacks" class="navbar__link">Stacks</a></li>
+          <li><a href="#projetos" class="navbar__link">Projetos</a></li>
+          <li><a href="#contato" class="navbar__link">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Alternar tema claro e escuro" title="Alternar tema">☀</button>
+
+    <!-- ══ INÍCIO ══ -->
+    <section id="inicio" class="section">
+      <div class="hero__grid">
+        <div data-reveal data-par="0.06">
+          <span class="badge">
+            <span class="badge__dot" aria-hidden="true"></span>
+            DISPONÍVEL PARA PROJETOS
+          </span>
+          <span class="eyebrow hero__eyebrow">OLÁ, EU SOU</span>
+          <h1 class="heading-display heading-display--lg hero__heading">
+            MÁRIO VIEIRA
+            <span class="heading-display__script">Portfolio</span>
+          </h1>
+          <p class="hero__lead">Analista de dados e desenvolvedor. Transformo dados brutos em decisão e construo as aplicações web e Android que geram esses dados — do banco até a tela.</p>
+          <div class="hero__actions">
+            <a class="btn btn--solid" href="#projetos">Ver Meus Projetos</a>
+            <a class="btn btn--ghost" href="https://wa.me/5511994847936" target="_blank" rel="noopener noreferrer">
+              Vamos Conversar
+              <span class="btn__trailing" aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div class="hero__meta">&lt;/ DADOS. CÓDIGO. DECISÃO /&gt;</div>
+        </div>
+        <div data-reveal data-par="-0.12">
+          <div class="hero-portrait">
+            <img src="assets/images/mario-vieira-retrato.jpg" alt="Retrato de Mário Vieira" />
+            <div class="hero-portrait__stat hero-portrait__stat--top">
+              <span class="hero-portrait__stat-value">3+</span>
+              <span class="hero-portrait__stat-label">ANOS EM DADOS</span>
+            </div>
+            <div class="hero-portrait__stat hero-portrait__stat--bottom">
+              <span class="hero-portrait__stat-value">17+</span>
+              <span class="hero-portrait__stat-label">TECNOLOGIAS</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="image">
-    <img src="./src/images/WhatsApp Image 2025-06-09 at 13.10.16.jpeg" alt="About Mário" />
-  </div>
-  </div>
+    </section>
 
-  <div id="about" class="experience-container">
+    <!-- ══ SOBRE ══ -->
+    <section id="sobre" class="section">
+      <div class="section__inner">
+        <div data-reveal data-par="0.05">
+          <div class="section-heading">
+            <div class="section-heading__group">
+              <span class="eyebrow">ME CONHEÇA</span>
+              <h2 class="section-heading__title">Da Planilha Bruta ao Produto Entregue</h2>
+              <p class="section-heading__desc">Trabalho na fronteira entre análise e desenvolvimento: modelo dados, monto dashboards de indicador e construo as aplicações que os alimentam. IA generativa entra como ferramenta de rotina, não como enfeite.</p>
+            </div>
+          </div>
+        </div>
 
-  <div class="tabs">
-    <button class="tab active" onclick="showExperience('work', this)">Work</button>
-    <button class="tab" onclick="showExperience('studies', this)">Studies</button>
-  </div>
+        <div class="stat-row" data-reveal data-par="-0.04">
+          <div class="stat-block">
+            <span class="stat-block__value">3+</span>
+            <span class="stat-block__label">ANOS EM DADOS</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-block__value">17+</span>
+            <span class="stat-block__label">TECNOLOGIAS</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-block__value">3+</span>
+            <span class="stat-block__label">PROJETOS ENTREGUES</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-block__value">24/7</span>
+            <span class="stat-block__label">SUPORTE AO CLIENTE</span>
+          </div>
+        </div>
 
-  <div class="experience-content" id="experience-content">
-    <div class="experience-item">
-      <div class="circle">
-        <img src="https://img.freepik.com/vetores-gratis/design-de-icone-de-lotus-de-logotipo-empresarial_53876-115927.jpg?semt=ais_hybrid&w=740" alt="Logo" />
+        <div class="service-grid" data-reveal>
+          <div class="card card--hoverable service-card">
+            <h3 class="service-card__title">Análise de Dados</h3>
+            <p class="service-card__body">Modelagem e tratamento que revelam o número por trás da operação.</p>
+            <span class="card__ordinal">01</span>
+          </div>
+          <div class="card card--hoverable service-card">
+            <h3 class="service-card__title">Dashboards</h3>
+            <p class="service-card__body">Painéis de indicador em Power BI e Looker que sustentam decisão.</p>
+            <span class="card__ordinal">02</span>
+          </div>
+          <div class="card card--hoverable service-card">
+            <h3 class="service-card__title">Desenvolvimento</h3>
+            <p class="service-card__body">Aplicações web e Android com código limpo e foco em usabilidade.</p>
+            <span class="card__ordinal">03</span>
+          </div>
+          <div class="card card--hoverable service-card">
+            <h3 class="service-card__title">Automação</h3>
+            <p class="service-card__body">Rotinas em Python e IA generativa que devolvem horas ao time.</p>
+            <span class="card__ordinal">04</span>
+          </div>
+        </div>
       </div>
-      <div class="text-box">
-        <p>Freelancer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2022-Atualmente<br>Atuando principalemnte com Design Gráfico e Designs UX e UI</p>
+    </section>
+
+    <!-- ══ EXPERIÊNCIA ══ -->
+    <section id="experiencia" class="section section--deep">
+      <div class="section__inner">
+        <div data-reveal data-par="0.05">
+          <div class="section-heading">
+            <div class="section-heading__group">
+              <span class="eyebrow">TRAJETÓRIA</span>
+              <h2 class="section-heading__title">Onde Eu Trabalhei</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="credential-grid" data-reveal>
+          <div class="card card--hoverable credential-card">
+            <div class="credential-card__head">
+              <h3 class="credential-card__title">Analista de Backoffice Sênior</h3>
+              <span class="credential-card__year">2026</span>
+            </div>
+            <span class="credential-card__issuer">Foundever — conta Airbnb</span>
+            <div class="credential-card__meta">
+              <span>2024 – 2026</span>
+              <span>Backoffice</span>
+            </div>
+            <div class="credential-card__tags">
+              <span class="tag tag--accent">Power BI</span>
+              <span class="tag tag--accent">Looker</span>
+              <span class="tag tag--accent">Salesforce</span>
+              <span class="tag tag--accent">Jira</span>
+              <span class="tag tag--accent">Excel</span>
+              <span class="tag tag--accent">Claude</span>
+            </div>
+          </div>
+
+          <div class="card card--hoverable credential-card">
+            <div class="credential-card__head">
+              <h3 class="credential-card__title">Desenvolvedor Freelancer</h3>
+              <span class="credential-card__year">2025</span>
+            </div>
+            <span class="credential-card__issuer">Web e Android</span>
+            <div class="credential-card__meta">
+              <span>2023 – 2025</span>
+              <span>Autônomo</span>
+            </div>
+            <div class="credential-card__tags">
+              <span class="tag tag--accent">Java</span>
+              <span class="tag tag--accent">Firebase</span>
+              <span class="tag tag--accent">PostgreSQL</span>
+              <span class="tag tag--accent">APIs REST</span>
+              <span class="tag tag--accent">Python</span>
+            </div>
+          </div>
+
+          <div class="card card--hoverable credential-card">
+            <div class="credential-card__head">
+              <h3 class="credential-card__title">Jovem Aprendiz — RH</h3>
+              <span class="credential-card__year credential-card__year--rose">2024</span>
+            </div>
+            <span class="credential-card__issuer">Danlex Serviços</span>
+            <div class="credential-card__meta">
+              <span>2023 – 2024</span>
+              <span>RH</span>
+            </div>
+            <div class="credential-card__tags">
+              <span class="tag tag--rose">Planilhas</span>
+              <span class="tag tag--rose">Documentos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="process-list" data-reveal>
+          <div class="process-step">
+            <div class="process-step__rail">
+              <span class="process-step__num">01</span>
+              <span class="process-step__line"></span>
+            </div>
+            <div class="process-step__body">
+              <h4 class="process-step__title">Entender</h4>
+              <p class="process-step__desc">Escuto a operação e mapeio onde o dado nasce e onde ele trava.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step__rail">
+              <span class="process-step__num">02</span>
+              <span class="process-step__line"></span>
+            </div>
+            <div class="process-step__body">
+              <h4 class="process-step__title">Modelar</h4>
+              <p class="process-step__desc">Estruturo base, consultas e regras que sustentam o indicador.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step__rail">
+              <span class="process-step__num">03</span>
+              <span class="process-step__line"></span>
+            </div>
+            <div class="process-step__body">
+              <h4 class="process-step__title">Construir</h4>
+              <p class="process-step__desc">Desenvolvo o painel ou a aplicação que entrega a informação.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step__rail">
+              <span class="process-step__num">04</span>
+              <span class="process-step__line"></span>
+            </div>
+            <div class="process-step__body">
+              <h4 class="process-step__title">Entregar</h4>
+              <p class="process-step__desc">Documento, treino o time e sigo dando suporte ao que foi entregue.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="experience-item">
-      <div class="circle">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSACS_ExZ_fMf2Fqa3X6i2YwfqWbyNgvowpew&s" alt="Logo" />
+    <!-- ══ ESTUDOS ══ -->
+    <section id="estudos" class="section">
+      <div class="section__inner">
+        <div data-reveal data-par="0.05">
+          <div class="section-heading">
+            <div class="section-heading__group">
+              <span class="eyebrow">FORMAÇÃO</span>
+              <h2 class="section-heading__title">O Que Eu Estudo</h2>
+              <p class="section-heading__desc">Graduação em tecnologia, mais estudo contínuo em dados e em IA aplicada ao trabalho.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="credential-grid" data-reveal>
+          <div class="card card--hoverable credential-card">
+            <div class="credential-card__head">
+              <h3 class="credential-card__title">Análise e Desenvolvimento de Sistemas</h3>
+              <span class="credential-card__year">2025</span>
+            </div>
+            <span class="credential-card__issuer">Universidade São Judas Tadeu</span>
+            <div class="credential-card__meta">
+              <span>2023 – 2025</span>
+              <span>Graduação</span>
+            </div>
+            <div class="credential-card__tags">
+              <span class="tag tag--accent">Java</span>
+              <span class="tag tag--accent">SQL</span>
+              <span class="tag tag--accent">Web</span>
+              <span class="tag tag--accent">Android</span>
+            </div>
+          </div>
+
+          <div class="card card--hoverable credential-card">
+            <div class="credential-card__head">
+              <h3 class="credential-card__title">Formação Contínua em Dados e IA</h3>
+              <span class="credential-card__year">2026</span>
+            </div>
+            <span class="credential-card__issuer">Estudo autodirigido</span>
+            <div class="credential-card__meta">
+              <span>Em andamento</span>
+            </div>
+            <div class="credential-card__tags">
+              <span class="tag tag--accent">SQL</span>
+              <span class="tag tag--accent">Power BI</span>
+              <span class="tag tag--accent">Looker</span>
+              <span class="tag tag--accent">Engenharia de prompt</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="text-box">
-        <p>Foundever &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2024-Atualmente<br>Responsável por suporte interno, atualização de planilhas e auxílio na organização e coordenação de equipes</p>
+    </section>
+
+    <!-- ══ STACKS ══ -->
+    <section id="stacks" class="section section--deep section--stacks">
+      <div class="section__inner">
+        <div data-reveal data-par="0.05">
+          <div class="section-heading">
+            <div class="section-heading__group">
+              <span class="eyebrow">MINHAS STACKS</span>
+              <h2 class="section-heading__title">Ferramentas Que Eu Uso</h2>
+              <p class="section-heading__desc">O que aparece no meu dia a dia, entre dados, desenvolvimento e automação.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="marquee" data-reveal>
+          <div class="marquee__track" aria-hidden="true">
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/python/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Python</span>
+            <span class="marquee__item">SQL</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/postgresql/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />PostgreSQL</span>
+            <span class="marquee__item">Power BI</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/looker/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Looker</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/openjdk/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Java</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/firebase/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Firebase</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/react/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />React</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/javascript/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />JavaScript</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/googlesheets/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Google Sheets</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/jira/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Jira</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/git/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Git</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/claude/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Claude</span>
+            <span class="marquee__item">OpenAI API</span>
+            <!-- duplicated for a seamless -50% loop -->
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/python/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Python</span>
+            <span class="marquee__item">SQL</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/postgresql/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />PostgreSQL</span>
+            <span class="marquee__item">Power BI</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/looker/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Looker</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/openjdk/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Java</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/firebase/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Firebase</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/react/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />React</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/javascript/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />JavaScript</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/googlesheets/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Google Sheets</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/jira/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Jira</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/git/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Git</span>
+            <span class="marquee__item"><img src="https://cdn.simpleicons.org/claude/E8E8EE" alt="" width="20" height="20" loading="lazy" decoding="async" />Claude</span>
+            <span class="marquee__item">OpenAI API</span>
+          </div>
+        </div>
+
+        <div class="tool-grid" data-reveal data-par="-0.05">
+          <div class="tool-tile" tabindex="0">
+            <span class="tool-tile__icon" style="--icon:url('https://cdn.simpleicons.org/python/A3A3B2');--icon-hover:url('https://cdn.simpleicons.org/python/B39BFF')"></span>
+            <span class="tool-tile__label">Python</span>
+          </div>
+          <div class="tool-tile" tabindex="0">
+            <span class="tool-tile__icon" style="--icon:url('https://cdn.simpleicons.org/postgresql/A3A3B2');--icon-hover:url('https://cdn.simpleicons.org/postgresql/B39BFF')"></span>
+            <span class="tool-tile__label">PostgreSQL</span>
+          </div>
+          <div class="tool-tile" tabindex="0">
+            <span class="tool-tile__icon" style="--icon:url('https://cdn.simpleicons.org/openjdk/A3A3B2');--icon-hover:url('https://cdn.simpleicons.org/openjdk/B39BFF')"></span>
+            <span class="tool-tile__label">Java</span>
+          </div>
+          <div class="tool-tile" tabindex="0">
+            <span class="tool-tile__icon" style="--icon:url('https://cdn.simpleicons.org/javascript/A3A3B2');--icon-hover:url('https://cdn.simpleicons.org/javascript/B39BFF')"></span>
+            <span class="tool-tile__label">JavaScript</span>
+          </div>
+          <div class="tool-tile" tabindex="0">
+            <span class="tool-tile__icon" style="--icon:url('https://cdn.simpleicons.org/react/A3A3B2');--icon-hover:url('https://cdn.simpleicons.org/react/B39BFF')"></span>
+            <span class="tool-tile__label">React</span>
+          </div>
+          <div class="tool-tile" tabindex="0">
+            <span class="tool-tile__icon" style="--icon:url('https://cdn.simpleicons.org/firebase/A3A3B2');--icon-hover:url('https://cdn.simpleicons.org/firebase/B39BFF')"></span>
+            <span class="tool-tile__label">Firebase</span>
+          </div>
+          <div class="tool-tile" tabindex="0">
+            <span class="tool-tile__icon" style="--icon:url('https://cdn.simpleicons.org/androidstudio/A3A3B2');--icon-hover:url('https://cdn.simpleicons.org/androidstudio/B39BFF')"></span>
+            <span class="tool-tile__label">Android Studio</span>
+          </div>
+          <div class="tool-tile" tabindex="0">
+            <span class="tool-tile__icon" style="--icon:url('https://cdn.simpleicons.org/git/A3A3B2');--icon-hover:url('https://cdn.simpleicons.org/git/B39BFF')"></span>
+            <span class="tool-tile__label">Git</span>
+          </div>
+          <div class="tool-tile" tabindex="0">
+            <span class="tool-tile__icon" style="--icon:url('https://cdn.simpleicons.org/googlesheets/A3A3B2');--icon-hover:url('https://cdn.simpleicons.org/googlesheets/B39BFF')"></span>
+            <span class="tool-tile__label">Sheets</span>
+          </div>
+          <div class="tool-tile" tabindex="0">
+            <span class="tool-tile__icon" style="--icon:url('https://cdn.simpleicons.org/looker/A3A3B2');--icon-hover:url('https://cdn.simpleicons.org/looker/B39BFF')"></span>
+            <span class="tool-tile__label">Looker</span>
+          </div>
+          <div class="tool-tile" tabindex="0">
+            <span class="tool-tile__icon" style="--icon:url('https://cdn.simpleicons.org/jira/A3A3B2');--icon-hover:url('https://cdn.simpleicons.org/jira/B39BFF')"></span>
+            <span class="tool-tile__label">Jira</span>
+          </div>
+          <div class="tool-tile" tabindex="0">
+            <span class="tool-tile__icon" style="--icon:url('https://cdn.simpleicons.org/claude/A3A3B2');--icon-hover:url('https://cdn.simpleicons.org/claude/B39BFF')"></span>
+            <span class="tool-tile__label">Claude</span>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
+
+    <!-- ══ PROJETOS ══ -->
+    <section id="projetos" class="section">
+      <div class="section__inner">
+        <div data-reveal data-par="0.05">
+          <div class="section-heading">
+            <div class="section-heading__group">
+              <span class="eyebrow">PROJETOS EM DESTAQUE</span>
+              <h2 class="section-heading__title">Trabalhos Selecionados</h2>
+              <p class="section-heading__desc">Cada card abre o projeto ao vivo ou o repositório em uma nova aba.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-grid" data-reveal data-par="-0.06">
+          <a class="project-card" href="https://github.com/Kindacid/Venus" target="_blank" rel="noopener noreferrer">
+            <div class="project-card__media">
+              <img src="assets/images/venus-library-logo.png" alt="Venus Library" loading="lazy" decoding="async" />
+              <span class="project-card__index">01</span>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__text">
+                <span class="project-card__title">Venus Library</span>
+                <span class="project-card__meta">Android · Java &amp; Firebase</span>
+              </span>
+              <span class="project-card__arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+
+          <a class="project-card" href="https://github.com/meldeoz/A3-git-projeto" target="_blank" rel="noopener noreferrer">
+            <div class="project-card__media">
+              <img src="assets/images/ai-therapist-logo.jpeg" alt="AI Therapist" loading="lazy" decoding="async" />
+              <span class="project-card__index">02</span>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__text">
+                <span class="project-card__title">AI Therapist</span>
+                <span class="project-card__meta">Web · OpenAI API &amp; JavaScript</span>
+              </span>
+              <span class="project-card__arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+
+          <a class="project-card" href="https://www.sergiovisaoimoveis.com.br" target="_blank" rel="noopener noreferrer">
+            <div class="project-card__media">
+              <span class="project-card__placeholder">
+                <img src="assets/images/sergio-visao-imoveis-logo.svg" alt="Logo Sérgio Visão Imóveis" loading="lazy" decoding="async" />
+              </span>
+              <span class="project-card__index">03</span>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__text">
+                <span class="project-card__title">Sergio Visão Imóveis</span>
+                <span class="project-card__meta">Web · JavaScript &amp; Python</span>
+              </span>
+              <span class="project-card__arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+
+          <a class="project-card" href="https://canetada.netlify.app" target="_blank" rel="noopener noreferrer">
+            <div class="project-card__media">
+              <span class="project-card__placeholder">
+                <svg viewBox="0 0 64 64" width="120" height="120" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Logo GLP Tracker" style="max-width:70%;max-height:70%;height:auto;">
+                  <g transform="rotate(25 44 32)">
+                    <path d="M38 18a6 6 0 0 1 12 0v26l-3.5 8h-5L38 44Z"></path>
+                    <path d="M44 52v6"></path>
+                    <rect x="41" y="22" width="6" height="6.5" rx="1.5" stroke-width="2.2"></rect>
+                    <path d="M40.5 35h7M40.5 40h7" stroke-width="2.2"></path>
+                  </g>
+                  <path d="M9.5 29.5h13v6.5h-13Z"></path>
+                  <path d="M11 36 8.5 39v15.5h15V39L21 36"></path>
+                  <path d="M10.5 45.5h11" stroke-width="2.2"></path>
+                </svg>
+              </span>
+              <span class="project-card__index">04</span>
+            </div>
+            <div class="project-card__body">
+              <span class="project-card__text">
+                <span class="project-card__title">GLP Tracker</span>
+                <span class="project-card__meta">Web · Controle de consumo de GLP</span>
+              </span>
+              <span class="project-card__arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="projects-more" data-reveal>
+          <a class="btn btn--bare" href="https://github.com/Kindacid" target="_blank" rel="noopener noreferrer">
+            Ver Todo o GitHub
+            <span class="btn__trailing" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CONTATO ══ -->
+    <section id="contato" class="section section--deep">
+      <div data-reveal data-par="0.04" style="width:100%;max-width:var(--width-content);margin:0 auto;">
+        <div class="contact-panel">
+          <span class="eyebrow eyebrow--light">VAMOS CONECTAR</span>
+          <h2 class="heading-display heading-display--sm heading-display--center" style="color:#FFFFFF;">VAMOS CONSTRUIR ALGO BOM JUNTOS</h2>
+          <p class="contact-panel__lead">Estou aberto a novos projetos e colaborações em dados e software. Me chame por onde preferir.</p>
+          <div class="contact-panel__actions">
+            <a class="btn btn--light" href="https://wa.me/5511994847936" target="_blank" rel="noopener noreferrer">
+              WhatsApp
+              <span class="btn__trailing" aria-hidden="true">↗</span>
+            </a>
+            <a class="btn btn--glass" href="mailto:mariosvfelix@gmail.com">mariosvfelix@gmail.com</a>
+          </div>
+          <div class="contact-panel__socials">
+            <a href="https://www.linkedin.com/in/mariosvieiraf/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <span class="contact-panel__divider">·</span>
+            <a href="https://github.com/Kindacid" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__about">
+          <span class="wordmark wordmark--md">
+            <span class="wordmark__avatar" aria-hidden="true">MV</span>
+            <span class="wordmark__text">
+              <span class="wordmark__name">Mário Vieira</span>
+              <span class="wordmark__role">Analista de Dados &amp; Dev</span>
+            </span>
+          </span>
+          <p class="site-footer__note">Dados que viram decisão. Código que entra no ar.</p>
+        </div>
+        <div class="site-footer__columns">
+          <div class="site-footer__column">
+            <span class="site-footer__column-title">Navegação</span>
+            <a href="#sobre">Sobre</a>
+            <a href="#experiencia">Experiência</a>
+            <a href="#projetos">Projetos</a>
+          </div>
+          <div class="site-footer__column">
+            <span class="site-footer__column-title">Contato</span>
+            <a href="https://wa.me/5511994847936" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="mailto:mariosvfelix@gmail.com">E-mail</a>
+            <a href="https://www.linkedin.com/in/mariosvieiraf/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/Kindacid" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom">© <span data-year>2026</span> Mário Vieira. Todos os direitos reservados.</div>
+    </footer>
+
   </div>
 
-  <div id="projects" class="projects-section">
-  <div class="project-card">
-    <div class="project-image">
-      <img src="./src/images/venus_logo-playstore.png" alt="Imagem do Projeto">
-    </div>
-    <div class="project-info">
-      <h2>Venus</h2>
-      <a class="project-btn" href="project-page.html?id=venus">About</a>
+  <div class="theme-wipe" data-theme-wipe aria-hidden="true"></div>
 
-      <p>Aplicativo Android para organização de dados, livros como base, integrado a banco de dados Firebase. Desenvolvido em Java, permitindo cadastro, consulta e gerenciamento simples.</p>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-image">
-      <img src="./src/images/aitherapist-logo.jpeg" alt="Imagem do Projeto">
-    </div>
-    <div class="project-info">
-      <h2>AI Therapist</h2>
-      <a class="project-btn" href="project-page.html?id=ai-therapist">About</a>
-
-      <p>Site de conversa que utiliza OpenAI para simular terapeutas e introduzir o usuário a dinâmicas terapêuticas. Não substitui acompanhamento profissional.</p>
-    </div>
-  </div>
-
-  <div class="more-link"><p>Veja mais...</p></div>
-  </div>
-
-  <div class="stack">
-  <h2>My Stack</h2>
-
-  <div class="tech-grid">
-    <span class="tech-item"><i class="devicon-java-plain colored"></i>Java</span>
-    <span class="tech-item"><i class="devicon-html5-plain colored"></i>HTML</span>
-    <span class="tech-item"><i class="devicon-css3-plain colored"></i>CSS</span>
-    <span class="tech-item"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
-    <span class="tech-item"><i class="devicon-react-original colored"></i>React</span>
-    <span class="tech-item"><i class="devicon-figma-plain colored"></i>Figma</span>
-    <span class="tech-item"><i class="devicon-illustrator-plain colored"></i>Illustrator</span>
-    <span class="tech-item"><i class="devicon-git-plain colored"></i>Git</span>
-    <span class="tech-item"><i class="devicon-github-original colored"></i>GitHub</span>
-    <span class="tech-item"><i class="devicon-ai-plain colored"></i>ChatGPT</span>
-    <span class="tech-item"><i class="devicon-androidstudio-plain colored"></i>Android Studio</span>
-    <span class="tech-item"><i class="devicon-firebase-plain colored"></i>Firebase</span>
-  </div>
-  </div>
-
-  <footer class="footer-container">
-  <div id="contact" class="footer-name">
-    <h1>Mário<br />Vieira</h1>
-  </div>
-  <div class="footer-contact">
-    <h2>Let's Connect!</h2>
-    <ul>
-      <li><a href="mailto:mariosvfelix@gmail.com">Email</a></li>
-      <li><a href="https://www.linkedin.com/in/mariosvieiraf" target="_blank">Linkedin</a></li>
-      <li><a href="https://github.com/Kindacid" target="_blank">GitHub</a></li>
-    </ul>
-  </div>
-  </footer>
+  <script>
+    document.querySelector("[data-year]").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

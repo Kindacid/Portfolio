@@ -1,0 +1,126 @@
+/*
+ * Reset, element defaults and global page behaviour.
+ * Ported from _ds/.../styles.css → tokens/base.css plus the page-level
+ * <style> block that lived inline in Portfolio Mario Vieira.dc.html
+ * (scroll behaviour, theme cross-fade, reveal keyframes, reduced motion).
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  color: var(--text-heading);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--text-link-hover);
+}
+
+::selection {
+  background: var(--accent-strong);
+  color: var(--paper-0);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Anchored sections sit under the sticky nav pill. */
+section[id] {
+  scroll-margin-top: 96px;
+}
+
+/* Cross-fade the whole page when the theme toggles (data-theme lives on
+   <html>, set by the inline script in <head> and by js/theme.js). */
+html[data-theme] {
+  transition: background-color var(--dur-theme) var(--ease-out);
+}
+
+html[data-theme] * {
+  transition:
+    background-color var(--dur-theme) var(--ease-out),
+    border-color var(--dur-theme) var(--ease-out),
+    color 420ms var(--ease-out),
+    box-shadow var(--dur-theme) var(--ease-out);
+}
+
+/* Scroll-triggered entrance reveal, driven by js/reveal.js toggling
+   [data-revealed] once an element has scrolled into view. */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+}
+
+[data-reveal][data-revealed] {
+  opacity: 1;
+  transform: none;
+  /* Repeats the html[data-theme] * transition list above (higher
+     specificity here would otherwise replace it outright, since the
+     `transition` shorthand doesn't merge across rules) so a revealed
+     element keeps cross-fading on later theme toggles, on top of its
+     own staggered entrance. */
+  transition:
+    opacity 420ms var(--ease-out) var(--reveal-delay, 0ms),
+    transform 420ms var(--ease-out) var(--reveal-delay, 0ms),
+    background-color var(--dur-theme) var(--ease-out),
+    border-color var(--dur-theme) var(--ease-out),
+    color 420ms var(--ease-out),
+    box-shadow var(--dur-theme) var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-par] {
+    transform: none !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

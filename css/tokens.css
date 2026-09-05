@@ -1,0 +1,250 @@
+/*
+ * Design tokens — palette, typography, spacing, shape/motion.
+ * Values sourced from the Claude Design handoff bundle:
+ *   _ds/.../tokens/{colors,typography,spacing,shape}.css
+ * The [data-theme="light"] block is copied verbatim from the light
+ * override authored inline in the original Portfolio Mario Vieira.dc.html —
+ * it is the source of truth the design tool already computed, including
+ * the ink/violet/rose ramp remap consumed by .navbar, .wordmark, .tag and
+ * .marquee.
+ */
+
+:root {
+  /* Ink (canvas → hairline) */
+  --ink-1000: #050507;
+  --ink-950: #0a0a0c;
+  --ink-900: #101014;
+  --ink-850: #15151b;
+  --ink-800: #1b1b23;
+  --ink-750: #22222c;
+  --ink-700: #2b2b36;
+  --ink-600: #3a3a47;
+  --ink-500: #4e4e5d;
+
+  /* Paper (type on dark) */
+  --paper-0: #ffffff;
+  --paper-50: #f6f6f8;
+  --paper-100: #e8e8ee;
+  --paper-200: #c7c7d2;
+  --paper-300: #a3a3b2;
+  --paper-400: #82828f;
+  --paper-500: #63636f;
+
+  /* Violet — primary accent */
+  --violet-200: #e2d9ff;
+  --violet-300: #c9b8ff;
+  --violet-400: #b39bff;
+  --violet-500: #9b7bff;
+  --violet-600: #7c4dff;
+  --violet-700: #5f35d6;
+  --violet-900: #241748;
+
+  /* Rose — secondary accent, used sparingly */
+  --rose-300: #ffa6c9;
+  --rose-500: #ff3e8f;
+  --rose-700: #b21d5c;
+
+  /* Semantic hues */
+  --green-400: #4ade80;
+  --amber-400: #fbbf24;
+  --red-400: #fb7185;
+  --sky-300: #7dd3fc;
+
+  /* Semantic aliases */
+  --canvas: var(--ink-950);
+  --canvas-deep: var(--ink-1000);
+  --surface-card: var(--ink-850);
+  --surface-card-hover: var(--ink-800);
+  --surface-raised: var(--ink-800);
+  --surface-inset: var(--ink-900);
+  --surface-glass: rgba(255, 255, 255, 0.04);
+
+  --border-hairline: rgba(255, 255, 255, 0.07);
+  --border-subtle: var(--ink-700);
+  --border-strong: var(--ink-600);
+  --border-accent: rgba(155, 123, 255, 0.45);
+
+  --text-display: var(--paper-50);
+  --text-heading: var(--paper-50);
+  --text-body: var(--paper-200);
+  --text-muted: var(--paper-400);
+  --text-eyebrow: var(--violet-400);
+  --text-accent: var(--violet-400);
+  --text-on-accent: #12091f;
+  --text-link: var(--violet-300);
+  --text-link-hover: var(--paper-0);
+
+  --accent: var(--violet-500);
+  --accent-strong: var(--violet-600);
+  --accent-soft: rgba(155, 123, 255, 0.14);
+  --accent-2: var(--rose-500);
+  --accent-2-soft: rgba(255, 62, 143, 0.14);
+
+  --status-success: var(--green-400);
+  --status-warning: var(--amber-400);
+  --status-danger: var(--red-400);
+  --status-info: var(--sky-300);
+
+  --focus-ring: rgba(155, 123, 255, 0.55);
+
+  /* Typography */
+  --font-display: "Anton", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-script: "Great Vibes", cursive;
+
+  --text-hero: clamp(56px, 9vw, 132px);
+  --text-display-1: 88px;
+  --text-display-2: 64px;
+  --text-h1: 44px;
+  --text-h2: 32px;
+  --text-h3: 24px;
+  --text-h4: 19px;
+  --text-lg: 18px;
+  --text-md: 16px;
+  --text-sm: 14px;
+  --text-xs: 13px;
+  --text-micro: 11px;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 800;
+
+  --leading-tight: 0.92;
+  --leading-snug: 1.12;
+  --leading-heading: 1.2;
+  --leading-body: 1.62;
+  --leading-relaxed: 1.75;
+
+  --tracking-display: -0.02em;
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.06em;
+  --tracking-eyebrow: 0.16em;
+  --tracking-mono: 0.02em;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  --gap-grid: 20px;
+  --gap-stack: 12px;
+  --pad-card: 22px;
+  --pad-card-lg: 28px;
+  --pad-section-y: 96px;
+  --pad-shell-x: clamp(20px, 5vw, 72px);
+  --measure-prose: 62ch;
+  --width-content: 1240px;
+
+  /* Shape, elevation, motion */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-card: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --radius-pill: 999px;
+
+  --border-width: 1px;
+  --border-width-thick: 2px;
+  --hairline: 1px solid var(--border-hairline);
+
+  --shadow-flat: none;
+  --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 8px 24px -12px rgba(0, 0, 0, 0.7);
+  --shadow-raised: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 18px 44px -18px rgba(0, 0, 0, 0.8);
+  --shadow-overlay: 0 32px 80px -24px rgba(0, 0, 0, 0.85);
+  --glow-accent: 0 0 0 1px rgba(155, 123, 255, 0.35), 0 8px 32px -6px rgba(124, 77, 255, 0.45);
+  --glow-accent-2: 0 0 32px -4px rgba(255, 62, 143, 0.5);
+
+  --scrim-bottom: linear-gradient(to top, rgba(5, 5, 7, 0.92) 0%, rgba(5, 5, 7, 0.6) 42%, rgba(5, 5, 7, 0) 100%);
+  --scrim-side: linear-gradient(to right, rgba(5, 5, 7, 0.95) 0%, rgba(5, 5, 7, 0) 70%);
+
+  --blur-glass: 14px;
+  --blur-heavy: 28px;
+
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0.05, 0.36, 1);
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 420ms;
+  --dur-marquee: 26s;
+  --dur-theme: 520ms;
+}
+
+/* Light theme — palette swap of the dark-first system above. */
+[data-theme="light"] {
+  --canvas: #f5f2fa;
+  --canvas-deep: #ece7f7;
+  --surface-card: #ffffff;
+  --surface-card-hover: #fbf9ff;
+  --surface-raised: #ffffff;
+  --surface-inset: #f0ecf9;
+  --surface-glass: rgba(255, 255, 255, 0.62);
+
+  --border-hairline: rgba(23, 19, 38, 0.09);
+  --border-subtle: #ded6ee;
+  --border-strong: #c6bade;
+  --border-accent: rgba(124, 77, 255, 0.42);
+
+  --text-display: #171326;
+  --text-heading: #171326;
+  --text-body: #4a4360;
+  --text-muted: #6e6785;
+  --text-eyebrow: #6b3fe0;
+  --text-accent: #6b3fe0;
+  --text-link: #6b3fe0;
+  --text-link-hover: #2e1370;
+  --text-on-accent: #ffffff;
+
+  --accent: #7c4dff;
+  --accent-strong: #6b3fe0;
+  --accent-soft: rgba(124, 77, 255, 0.11);
+
+  --paper-0: #171326;
+  --paper-50: #171326;
+  --paper-100: #241e38;
+  --paper-200: #4a4360;
+  --paper-300: #5e5675;
+  --paper-400: #6e6785;
+
+  /* Raw ink ramp is read directly by .navbar/.marquee's background and by
+     media placeholder fills — remap it too, or those stay dark. */
+  --ink-1000: #ffffff;
+  --ink-950: #f5f2fa;
+  --ink-900: #ede8f7;
+  --ink-850: #ffffff;
+  --ink-800: #fbf9ff;
+  --ink-750: #f2eefa;
+  --ink-700: #ded6ee;
+  --ink-600: #c6bade;
+  --ink-500: #a79abf;
+
+  --scrim-bottom: linear-gradient(to top, rgba(23, 19, 38, 0.1) 0%, rgba(23, 19, 38, 0.04) 42%, rgba(23, 19, 38, 0) 100%);
+  --scrim-side: linear-gradient(to right, rgba(23, 19, 38, 0.12) 0%, rgba(23, 19, 38, 0) 70%);
+
+  --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 10px 28px -16px rgba(23, 19, 38, 0.22);
+  --shadow-raised: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 18px 44px -22px rgba(23, 19, 38, 0.26);
+  --shadow-overlay: 0 32px 80px -28px rgba(23, 19, 38, 0.3);
+
+  /* Accent ramps are also read raw (.navbar active link, .wordmark, .tag) —
+     darken for a light canvas. */
+  --violet-200: #3a1d8f;
+  --violet-300: #5a2fd6;
+  --violet-400: #6b3fe0;
+  --rose-300: #b21d5c;
+  --rose-500: #b21d5c;
+}
