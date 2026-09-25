@@ -574,6 +574,13 @@
   object-fit: contain;
 }
 
+/* Per-theme logo variants — an <img> can't read the page theme, so the
+   card ships one file per theme and shows only the matching one. */
+:root:not([data-theme="light"]) .project-card__logo--light,
+[data-theme="light"] .project-card__logo--dark {
+  display: none;
+}
+
 .project-card__index {
   position: absolute;
   top: 12px;
