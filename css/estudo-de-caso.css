@@ -1,0 +1,372 @@
+/*
+ * Página de estudo de caso (visao-imoveis.html).
+ * Usa só os tokens de tokens.css, então acompanha os temas claro e escuro.
+ * As seções aqui não ocupam a tela inteira como as da página inicial.
+ */
+
+.cs-section {
+  padding: 72px var(--pad-shell-x);
+  border-top: 1px solid var(--border-hairline);
+}
+
+.cs-section--deep {
+  background: var(--canvas-deep);
+}
+
+.cs-inner {
+  width: 100%;
+  max-width: var(--width-content);
+  margin: 0 auto;
+  display: grid;
+  gap: 28px;
+}
+
+.cs-prose {
+  max-width: var(--measure-prose);
+  display: grid;
+  gap: 14px;
+  color: var(--text-body);
+  font-size: var(--text-lg);
+  line-height: var(--leading-body);
+}
+
+.cs-prose p {
+  margin: 0;
+}
+
+/* ---------- Abertura ---------- */
+
+.cs-hero {
+  padding: 140px var(--pad-shell-x) 56px;
+}
+
+.cs-back {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-mono);
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.cs-back:hover,
+.cs-back:focus-visible {
+  color: var(--text-link);
+}
+
+.cs-hero__lead {
+  max-width: 60ch;
+  margin: 0;
+  color: var(--text-body);
+  font-size: var(--text-lg);
+  line-height: var(--leading-body);
+}
+
+.cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cs-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---------- Prints ---------- */
+
+.cs-shot {
+  margin: 0;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  box-shadow: var(--shadow-card);
+}
+
+.cs-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cs-shot figcaption {
+  padding: 12px 16px;
+  border-top: 1px solid var(--border-hairline);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.cs-note {
+  max-width: 72ch;
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+/* ---------- Ficha técnica ---------- */
+
+.cs-ficha {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-card);
+  background: var(--surface-card);
+  overflow: hidden;
+}
+
+.cs-ficha__item {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  padding: 20px 22px;
+  border-right: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+}
+
+.cs-ficha__item:nth-child(4n) {
+  border-right: 0;
+}
+
+.cs-ficha__item:nth-last-child(-n + 4) {
+  border-bottom: 0;
+}
+
+.cs-ficha__value {
+  font-family: var(--font-display);
+  font-size: 34px;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-display);
+  color: var(--text-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.cs-ficha__value--text {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-heading);
+}
+
+/* ---------- Recursos do CRM (texto + print) ---------- */
+
+.cs-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: 36px;
+  align-items: center;
+  padding-top: 36px;
+  border-top: 1px solid var(--border-hairline);
+}
+
+.cs-feature--flip {
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+}
+
+.cs-feature--flip .cs-feature__text {
+  order: 2;
+}
+
+.cs-feature__text {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.cs-feature__title,
+.cs-h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-heading);
+}
+
+.cs-feature__text p {
+  margin: 0;
+  color: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+.cs-list {
+  margin: 0;
+  padding-left: 1.1em;
+  display: grid;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--leading-body);
+}
+
+.cs-list li::marker {
+  color: var(--text-accent);
+}
+
+.cs-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+/* ---------- Grades de cards ---------- */
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap-grid);
+}
+
+.cs-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cs-grid .card {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.cs-grid .card p {
+  margin: 0;
+  color: var(--text-body);
+  font-size: var(--text-sm);
+  line-height: var(--leading-body);
+}
+
+.cs-card-title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-h4);
+  font-weight: var(--weight-semibold);
+  color: var(--text-heading);
+}
+
+.cs-code {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-accent);
+}
+
+.cs-decision {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+
+/* ---------- Linha do tempo ---------- */
+
+.cs-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+.cs-timeline li {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--border-subtle);
+  color: var(--text-body);
+}
+
+.cs-timeline li:last-child {
+  border-bottom: 0;
+}
+
+.cs-timeline time {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Galeria do site público ---------- */
+
+.cs-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.cs-gallery__col {
+  display: grid;
+  gap: 16px;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 900px) {
+  .cs-feature,
+  .cs-feature--flip,
+  .cs-decision {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cs-feature--flip .cs-feature__text {
+    order: 0;
+  }
+
+  .cs-ficha {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cs-ficha__item:nth-child(4n) {
+    border-right: 1px solid var(--border-hairline);
+  }
+
+  .cs-ficha__item:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .cs-ficha__item:nth-last-child(-n + 4) {
+    border-bottom: 1px solid var(--border-hairline);
+  }
+
+  .cs-ficha__item:nth-last-child(-n + 2) {
+    border-bottom: 0;
+  }
+
+  .cs-grid,
+  .cs-grid--2,
+  .cs-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .cs-hero {
+    padding-top: 112px;
+  }
+
+  .cs-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .cs-pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cs-ficha__value {
+    font-size: 28px;
+  }
+
+  .cs-ficha__value--text {
+    font-size: var(--text-md);
+  }
+}

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visão Imóveis — Estudo de caso · Mário Vieira</title>
+  <meta name="description" content="Estudo de caso do Visão Imóveis: CRM e portal de uma imobiliária do sul de Minas, desenvolvido de ponta a ponta por Mário Vieira e em produção." />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Visão Imóveis — Estudo de caso" />
+  <meta property="og:description" content="CRM e portal de uma imobiliária do sul de Minas, em produção. Funis de negócio, triagem de pedidos, automações e decisões técnicas." />
+
+  <meta name="theme-color" content="#0A0A0C" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#F5F2FA" media="(prefers-color-scheme: light)" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Great+Vibes&display=swap" />
+
+  <link rel="stylesheet" href="css/tokens.css?v=20260925" />
+  <link rel="stylesheet" href="css/base.css?v=20260925" />
+  <link rel="stylesheet" href="css/components.css?v=20260925" />
+  <link rel="stylesheet" href="css/sections.css?v=20260925" />
+  <link rel="stylesheet" href="css/estudo-de-caso.css?v=20261014" />
+
+  <script>
+    /* Mesmo script da página inicial: aplica o tema salvo antes da
+       primeira pintura, para não piscar o tema errado. */
+    (function () {
+      try {
+        var saved = localStorage.getItem("mv-theme");
+        document.documentElement.dataset.theme = saved === "light" ? "light" : "dark";
+      } catch (err) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    })();
+  </script>
+
+  <script src="js/theme.js" defer></script>
+  <script src="js/reveal.js" defer></script>
+  <script src="js/scroll.js" defer></script>
+</head>
+<body>
+
+  <div class="ambient" aria-hidden="true">
+    <div class="ambient__blob ambient__blob--1" data-par="0.10"></div>
+    <div class="ambient__blob ambient__blob--2" data-par="-0.16"></div>
+    <div class="ambient__blob ambient__blob--3" data-par="0.22"></div>
+  </div>
+
+  <div class="page">
+
+    <header class="site-header">
+      <nav class="navbar" aria-label="Navegação principal">
+        <a href="index.html" class="wordmark wordmark--sm">
+          <span class="wordmark__avatar" aria-hidden="true">MV</span>
+          <span class="wordmark__text">
+            <span class="wordmark__name">Mário Vieira</span>
+            <span class="wordmark__role">Analista de Dados &amp; Dev</span>
+          </span>
+        </a>
+        <ul class="navbar__links">
+          <li><a href="index.html#inicio" class="navbar__link">Início</a></li>
+          <li><a href="index.html#sobre" class="navbar__link">Sobre</a></li>
+          <li><a href="index.html#experiencia" class="navbar__link">Experiência</a></li>
+          <li><a href="index.html#projetos" class="navbar__link">Projetos</a></li>
+          <li><a href="index.html#contato" class="navbar__link">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label="Alternar tema claro e escuro" title="Alternar tema">☀</button>
+
+    <main>
+
+      <!-- ══ ABERTURA ══ -->
+      <section class="cs-hero">
+        <div class="cs-inner">
+          <a class="cs-back" href="index.html#projetos">← Voltar aos projetos</a>
+          <div data-reveal style="display:grid;gap:20px">
+            <span class="eyebrow">ESTUDO DE CASO · PROJETO 03</span>
+            <h1 class="heading-display heading-display--lg">
+              VISÃO IMÓVEIS
+              <span class="heading-display__script">CRM imobiliário</span>
+            </h1>
+            <p class="cs-hero__lead">Um CRM sob medida para uma imobiliária do sul de Minas Gerais: funil de imóveis e de clientes, cadastro de pessoas, triagem de pedidos e edição do site, ligados a um portal público. Projeto freelance que desenvolvi de ponta a ponta e que está em produção desde 2026.</p>
+            <div class="cs-tags">
+              <span class="tag tag--accent">EM PRODUÇÃO</span>
+              <span class="tag tag--accent">FREELANCE</span>
+              <span class="tag tag--accent">AGO–OUT 2026</span>
+              <span class="tag tag--rose">JAVASCRIPT · FASTAPI · POSTGRESQL</span>
+            </div>
+            <div class="cs-actions">
+              <a class="btn btn--solid" href="https://www.visaoimoveisminas.com.br" target="_blank" rel="noopener noreferrer">
+                Ver o site no ar
+                <span class="btn__trailing" aria-hidden="true">↗</span>
+              </a>
+              <a class="btn btn--ghost" href="https://github.com/Kindacid/SergioVisaoSite" target="_blank" rel="noopener noreferrer">
+                Repositório no GitHub
+                <span class="btn__trailing" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <figure class="cs-shot" data-reveal>
+            <img src="assets/images/visao-imoveis/crm-quadro.jpg" alt="Painel administrativo com o quadro kanban da jornada de negócios: colunas Prospecção, Captação, Publicado e Em negociação, com cards de imóveis mostrando preço, interessados e prazo na etapa" width="1440" height="900" />
+            <figcaption>Jornada de negócios no painel. Cada coluna tem prazo próprio, e o card fica vermelho quando o imóvel passa do prazo da etapa.</figcaption>
+          </figure>
+
+          <div class="cs-ficha" data-reveal aria-label="Ficha técnica do projeto">
+            <div class="cs-ficha__item"><span class="eyebrow">Acervo migrado</span><span class="cs-ficha__value">39</span><span class="stat-block__label">imóveis reais</span></div>
+            <div class="cs-ficha__item"><span class="eyebrow">Painel admin</span><span class="cs-ficha__value">21</span><span class="stat-block__label">telas</span></div>
+            <div class="cs-ficha__item"><span class="eyebrow">JavaScript</span><span class="cs-ficha__value">25 mil</span><span class="stat-block__label">linhas</span></div>
+            <div class="cs-ficha__item"><span class="eyebrow">Python</span><span class="cs-ficha__value">7,7 mil</span><span class="stat-block__label">linhas</span></div>
+            <div class="cs-ficha__item"><span class="eyebrow">Módulos</span><span class="cs-ficha__value">~50</span><span class="stat-block__label">no painel</span></div>
+            <div class="cs-ficha__item"><span class="eyebrow">Histórico</span><span class="cs-ficha__value">67</span><span class="stat-block__label">commits</span></div>
+            <div class="cs-ficha__item"><span class="eyebrow">Praça</span><span class="cs-ficha__value cs-ficha__value--text">Cachoeira de Minas e Pouso Alegre, MG</span></div>
+            <div class="cs-ficha__item"><span class="eyebrow">Papel</span><span class="cs-ficha__value cs-ficha__value--text">Dev full stack, sozinho</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ PROBLEMA ══ -->
+      <section class="cs-section">
+        <div class="cs-inner">
+          <div class="section-heading" data-reveal>
+            <div class="section-heading__group">
+              <span class="eyebrow">O PROBLEMA</span>
+              <h2 class="section-heading__title">Sair de um CRM alugado para um sistema próprio</h2>
+            </div>
+          </div>
+          <div class="cs-prose" data-reveal>
+            <p>A imobiliária anunciava os imóveis num site montado pelo CRM de terceiros que usava. O corretor queria um site com a cara da marca e, principalmente, um CRM próprio para o dia a dia: cadastrar imóveis, acompanhar cada negociação do primeiro contato ao contrato, receber os pedidos de quem quer anunciar e editar o próprio site sem depender de ninguém.</p>
+            <p>Comecei pelo site público, migrei os 39 imóveis reais do site antigo e construí o painel e o backend em fases, sempre com o aval do cliente antes de cada uma. O roteiro do funil de negócios foi aprovado pelo cliente. Hoje todo o sistema roda em produção, com domínio próprio.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ O PAINEL (CRM) ══ -->
+      <section class="cs-section cs-section--deep">
+        <div class="cs-inner">
+          <div class="section-heading" data-reveal>
+            <div class="section-heading__group">
+              <span class="eyebrow">O PAINEL</span>
+              <h2 class="section-heading__title">Um CRM feito para o jeito de trabalhar do corretor</h2>
+              <p class="section-heading__desc">O painel é a parte principal do projeto. Ele reúne imóveis, clientes e proprietários no mesmo lugar, e liga tudo ao site: o que o corretor muda aqui aparece para quem visita.</p>
+            </div>
+          </div>
+          <p class="cs-note">As telas do painel usam dados de demonstração. Clientes, solicitações e etapas são fictícios; os imóveis são os anúncios públicos do site.</p>
+
+          <div class="cs-feature" data-reveal>
+            <div class="cs-feature__text">
+              <span class="eyebrow">JORNADA DE NEGÓCIOS</span>
+              <h3 class="cs-feature__title">Dois funis que se cruzam</h3>
+              <p>Um funil acompanha o imóvel (da prospecção ao vendido) e outro acompanha o cliente (da captação ao contrato). Na visão cruzada, arrastar um cliente sobre um imóvel registra o interesse entre os dois.</p>
+              <ul class="cs-list">
+                <li>Etapas configuráveis: o corretor cria, renomeia, reordena e define o prazo de cada uma.</li>
+                <li>Os dias na etapa saem de um histórico que nunca é apagado.</li>
+                <li>Com uma proposta ativa, o imóvel vai sozinho para "Em negociação". A regra só avança, nunca volta.</li>
+                <li>No celular, onde não dá para arrastar, cada card tem um seletor "Mover para".</li>
+              </ul>
+            </div>
+            <figure class="cs-shot"><img src="assets/images/visao-imoveis/crm-clientes.jpg" alt="Funil de clientes com as colunas Captação, Qualificação, Apresentação, Visita e Negociação, com cards de clientes mostrando telefone, cidade e observações" width="1440" height="684" loading="lazy" /><figcaption>Funil de clientes.</figcaption></figure>
+          </div>
+
+          <div class="cs-feature cs-feature--flip" data-reveal>
+            <div class="cs-feature__text">
+              <span class="eyebrow">FICHA DO NEGÓCIO</span>
+              <h3 class="cs-feature__title">Tudo sobre o cliente num só lugar</h3>
+              <p>A ficha mostra a etapa, o tempo no funil, os imóveis em que o cliente tem interesse e a situação de cada um (apresentado, visitou, proposta enviada).</p>
+              <ul class="cs-list">
+                <li>Vincular imóvel com busca e filtros por tipo e bairro.</li>
+                <li>Observações internas, as mesmas do cadastro da pessoa.</li>
+                <li>Histórico de cada mudança de etapa, com autor e data.</li>
+              </ul>
+            </div>
+            <figure class="cs-shot"><img src="assets/images/visao-imoveis/crm-ficha.jpg" alt="Janela da ficha de uma cliente com etapa atual, dias no funil, dois imóveis de interesse com situação, campo de observações internas e histórico" width="840" height="760" loading="lazy" /><figcaption>Ficha de um cliente em negociação.</figcaption></figure>
+          </div>
+
+          <div class="cs-feature" data-reveal>
+            <div class="cs-feature__text">
+              <span class="eyebrow">SOLICITAÇÕES</span>
+              <h3 class="cs-feature__title">Do pedido no site ao imóvel cadastrado</h3>
+              <p>Quem quer anunciar preenche um formulário no site. O pedido chega como notificação push e entra num quadro de triagem.</p>
+              <ul class="cs-list">
+                <li>O quadro só deixa mover o pedido para as etapas permitidas. As outras colunas nem acendem no arraste.</li>
+                <li>Abrir o pedido marca como lido, igual a um e-mail.</li>
+                <li>Um pedido aceito vira proprietário cadastrado e abre o cadastro do imóvel já preenchido.</li>
+              </ul>
+            </div>
+            <figure class="cs-shot"><img src="assets/images/visao-imoveis/crm-solicitacoes.jpg" alt="Quadro de solicitações de anúncio com as colunas Nova, Em análise, Aceita e Convertida" width="1440" height="860" loading="lazy" /><figcaption>Triagem de solicitações.</figcaption></figure>
+          </div>
+
+          <div class="cs-feature cs-feature--flip" data-reveal>
+            <div class="cs-feature__text">
+              <span class="eyebrow">IMÓVEIS E PESSOAS</span>
+              <h3 class="cs-feature__title">Carteira completa, com filtros que viram link</h3>
+              <p>A listagem guarda filtros, ordem e página no endereço. Assim um link filtrado pode ser compartilhado, e os alertas do início abrem a lista já filtrada.</p>
+              <ul class="cs-list">
+                <li>Cadastro de imóvel em 8 etapas, com o redator de anúncio e o upload de fotos.</li>
+                <li>Inativar pede um motivo, de uma lista definida com o cliente.</li>
+                <li>Um único cadastro de pessoas com seis papéis: proprietário, inquilino, fiador, comprador, locatário e corretor.</li>
+                <li>Exportação para CSV.</li>
+              </ul>
+            </div>
+            <figure class="cs-shot"><img src="assets/images/visao-imoveis/crm-imoveis.jpg" alt="Tabela de imóveis com foto, código, título, tipo, bairro, valor e a etapa do funil em que cada um está" width="1440" height="900" loading="lazy" /><figcaption>A coluna "Situação" vem do funil de negócios.</figcaption></figure>
+          </div>
+
+          <div class="cs-feature" data-reveal>
+            <div class="cs-feature__text">
+              <span class="eyebrow">INÍCIO</span>
+              <h3 class="cs-feature__title">O dia do corretor numa tela</h3>
+              <p>O início junta os números da carteira, alertas clicáveis (imóvel sem foto, sem publicar ou parado há mais de 60 dias) e um resumo do funil com os prazos estourados.</p>
+              <ul class="cs-list">
+                <li>Gráfico de cadastros por mês desenhado em SVG, sem biblioteca.</li>
+                <li>Perfis de acesso com matriz de permissões, conferida também no servidor.</li>
+              </ul>
+            </div>
+            <figure class="cs-shot"><img src="assets/images/visao-imoveis/crm-inicio.jpg" alt="Tela inicial do painel com atalhos, contadores de imóveis, alertas e o resumo da jornada por etapa" width="1440" height="1000" loading="lazy" /><figcaption>Tela inicial do painel.</figcaption></figure>
+          </div>
+
+          <div class="cs-feature cs-feature--flip" data-reveal>
+            <div class="cs-feature__text">
+              <span class="eyebrow">MEU SITE E MURAL</span>
+              <h3 class="cs-feature__title">O corretor edita o site e imprime o anúncio</h3>
+              <p>Em "Meu Site", o corretor muda cores, textos, imagens e a ordem dos blocos da página inicial, com prévia ao vivo. Nada vai para o ar até ele clicar em "Publicar".</p>
+              <p>Na ficha do imóvel, um botão gera a folha A4 do mural da imobiliária, com QR code para o anúncio online.</p>
+            </div>
+            <div class="cs-pair">
+              <figure class="cs-shot"><img src="assets/images/visao-imoveis/crm-meusite.jpg" alt="Tela Meu Site com os controles de identidade visual à esquerda e a prévia do site à direita" width="1440" height="900" loading="lazy" /><figcaption>Meu Site, com prévia.</figcaption></figure>
+              <figure class="cs-shot"><img src="assets/images/visao-imoveis/crm-mural.jpg" alt="Folha do mural com foto, características, destaques, valor e QR code" width="793" height="880" loading="lazy" /><figcaption>Mural gerado em PDF.</figcaption></figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ STACK ══ -->
+      <section class="cs-section">
+        <div class="cs-inner">
+          <div class="section-heading" data-reveal>
+            <div class="section-heading__group">
+              <span class="eyebrow">COMO FOI CONSTRUÍDO</span>
+              <h2 class="section-heading__title">Stack enxuta, sem etapa de build</h2>
+            </div>
+          </div>
+          <div class="cs-grid" data-reveal>
+            <div class="card"><h3 class="cs-card-title">Front-end</h3><p>HTML, CSS e JavaScript vanilla. O site público usa scripts simples; o painel usa ES Modules nativos. Nenhum framework, bundler ou npm.</p></div>
+            <div class="card"><h3 class="cs-card-title">Back-end</h3><p>FastAPI, SQLAlchemy e migrações com Alembic, sobre PostgreSQL no Supabase. Fotos no Supabase Storage, convertidas para WebP com miniatura.</p></div>
+            <div class="card"><h3 class="cs-card-title">Entrega</h3><p>Deploy automático no Render a cada push. Leaflet para o mapa da ficha, carregado por CDN só nas páginas que precisam.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ AUTOMAÇÕES ══ -->
+      <section class="cs-section cs-section--deep">
+        <div class="cs-inner">
+          <div class="section-heading" data-reveal>
+            <div class="section-heading__group">
+              <span class="eyebrow">O QUE FOI AUTOMATIZADO</span>
+              <h2 class="section-heading__title">Trabalho que o sistema passou a fazer sozinho</h2>
+            </div>
+          </div>
+          <div class="cs-grid" data-reveal>
+            <div class="card"><span class="eyebrow">MAPA</span><h3 class="cs-card-title">Posição do bairro no servidor</h3><p>Ao salvar um imóvel, o backend descobre onde fica o bairro e desenha um círculo de área na ficha pública, sem nunca expor rua ou número.</p></div>
+            <div class="card"><span class="eyebrow">AVISO</span><h3 class="cs-card-title">Push de novas solicitações</h3><p>Quando um proprietário pede para anunciar pelo site, o celular de quem administra o painel recebe a notificação na hora.</p></div>
+            <div class="card"><span class="eyebrow">VITRINE</span><h3 class="cs-card-title">Vendido sai do site sozinho</h3><p>Quando um imóvel chega a uma etapa do funil marcada como "não publica no site", como Vendido, ele some do site público na consulta seguinte.</p></div>
+            <div class="card"><span class="eyebrow">TEXTO</span><h3 class="cs-card-title">Redator de anúncio</h3><p>Monta título e descrição a partir dos campos do cadastro, com concordância de gênero ("Casa localizada", "no Centro", "na Faisqueira").</p></div>
+            <div class="card"><span class="eyebrow">IMPRESSÃO</span><h3 class="cs-card-title">Mural com corte alinhado</h3><p>A linha de corte da folha do mural cai sempre a 230,7 mm do topo, para várias folhas serem cortadas juntas. O texto se ajusta para caber sem empurrar a linha.</p></div>
+            <div class="card"><span class="eyebrow">DIVULGAÇÃO</span><h3 class="cs-card-title">Compartilhar com prévia</h3><p>O backend gera uma página com as tags Open Graph do imóvel, então o link chega no WhatsApp e no Facebook com foto, título e preço.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ DECISÕES ══ -->
+      <section class="cs-section">
+        <div class="cs-inner">
+          <div class="section-heading" data-reveal>
+            <div class="section-heading__group">
+              <span class="eyebrow">DECISÕES</span>
+              <h2 class="section-heading__title">Escolhas que eu explicaria numa entrevista</h2>
+            </div>
+          </div>
+          <div class="cs-grid cs-grid--2" data-reveal>
+            <div class="card"><h3 class="cs-card-title">O redator de anúncios não usa IA</h3><p>Um anúncio de imóvel não pode inventar um dado, e um modelo de linguagem às vezes inventa. Por isso o texto é montado por regras a partir dos campos do cadastro: é previsível, funciona sem internet e só diz o que está cadastrado. O texto também é só uma sugestão; quem salva é o corretor.</p></div>
+            <div class="card"><h3 class="cs-card-title">Uma regra que parecia funcionar, mas não funcionava</h3><p>No começo, a regra que esconde imóveis vendidos rodava no navegador e lia dados salvos localmente. Funcionava no computador do corretor, mas um visitante comum não tinha esses dados, então via tudo, até imóvel vendido. Quando o backend ficou pronto, levei a regra para a própria consulta SQL da API pública. Agora ela vale para todo mundo.</p></div>
+          </div>
+          <div class="card cs-decision" data-reveal>
+            <div style="display:grid;gap:10px">
+              <h3 class="cs-card-title">O mapa mostra o bairro, nunca o endereço</h3>
+              <p>O cliente tinha um receio concreto: com o endereço exato, o comprador poderia procurar o proprietário e fechar negócio sem a imobiliária. Analisando o site antigo, vi que ele localizava o imóvel pelo número da casa. Aqui a API pública nem envia rua e número, e a posição é calculada por bairro, no servidor.</p>
+              <p style="color:var(--text-muted)">Na primeira versão, uma busca por texto achou uma loja com o mesmo nome do bairro e mostrou o endereço dela. Troquei a busca por uma posição fixa por bairro, que só aceita bairro de verdade e tem ajuste manual no painel.</p>
+            </div>
+            <figure class="cs-shot"><img src="assets/images/visao-imoveis/mapa.jpg" alt="Mapa com um círculo de área sobre Cachoeira de Minas, sem pino de endereço" width="1020" height="447" loading="lazy" /><figcaption>Círculo de área, sem pino.</figcaption></figure>
+          </div>
+          <div class="card" data-reveal style="display:grid;gap:8px">
+            <h3 class="cs-card-title">Sem framework, por escolha</h3>
+            <p style="margin:0;color:var(--text-body);font-size:var(--text-sm);line-height:var(--leading-body)">O site é pequeno e o cliente não tem equipe técnica. Sem build, qualquer pessoa consegue abrir os arquivos e entender o que roda. No painel, que passou de 20 telas, usei ES Modules nativos para organizar os módulos sem precisar de bundler.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ IA ══ -->
+      <section class="cs-section cs-section--deep">
+        <div class="cs-inner">
+          <div class="section-heading" data-reveal>
+            <div class="section-heading__group">
+              <span class="eyebrow">IA NO PROCESSO</span>
+              <h2 class="section-heading__title">Desenvolvido em par com o Claude, com regras claras</h2>
+            </div>
+          </div>
+          <div class="cs-prose" data-reveal>
+            <p>Grande parte do código foi escrita junto com o Claude. O que fiz para isso dar certo num projeto real foi tratar a IA como uma dupla que precisa de contexto e de limites. O repositório tem um documento de regras com mais de mil linhas: o que é proibido (framework, build, link do site público para o painel), as convenções de nome, o modelo de dados e o histórico de cada decisão com o motivo.</p>
+            <p>Criei quatro agentes próprios, cada um com uma função:</p>
+          </div>
+          <div class="cs-grid cs-grid--2" data-reveal>
+            <div class="card"><span class="cs-code">revisor-codigo</span><p>Procura bugs de verdade e quebras de arquitetura nas mudanças.</p></div>
+            <div class="card"><span class="cs-code">guardiao-regras</span><p>Confere as regras rígidas do projeto. Só aponta, nunca corrige sozinho.</p></div>
+            <div class="card"><span class="cs-code">testador-site</span><p>Sobe o servidor local e percorre os fluxos em várias larguras de tela.</p></div>
+            <div class="card"><span class="cs-code">cacador-redundancia</span><p>Encontra código morto e duplicado.</p></div>
+          </div>
+          <p class="cs-prose" data-reveal style="margin:0">Antes de dar uma mudança por pronta, ela era testada no navegador com Playwright, em várias larguras de tela, e conferida contra o banco local.</p>
+        </div>
+      </section>
+
+      <!-- ══ LINHA DO TEMPO ══ -->
+      <section class="cs-section">
+        <div class="cs-inner">
+          <div class="section-heading" data-reveal>
+            <div class="section-heading__group">
+              <span class="eyebrow">LINHA DO TEMPO</span>
+              <h2 class="section-heading__title">Do primeiro commit ao domínio próprio</h2>
+            </div>
+          </div>
+          <ol class="cs-timeline" data-reveal>
+            <li><time datetime="2026-08-11">11/08</time><span>Primeiro commit: site público e estrutura do painel.</span></li>
+            <li><time datetime="2026-08-13">13/08</time><span>Os 39 imóveis reais migrados do site antigo. O cliente autoriza o backend.</span></li>
+            <li><time datetime="2026-09-11">11/09</time><span>O site público passa a ler os imóveis direto da API.</span></li>
+            <li><time datetime="2026-09-14">14/09</time><span>Funil de negócios, configurações e "Meu Site" passam a ser salvos no servidor.</span></li>
+            <li><time datetime="2026-09-24">24/09</time><span>Mudança para o domínio próprio, mural em PDF e página "Quem somos".</span></li>
+            <li><time datetime="2026-10-06">06/10</time><span>Comissão em percentual ou valor fixo, últimos ajustes pedidos pelo cliente.</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ══ SITE PÚBLICO ══ -->
+      <section class="cs-section cs-section--deep">
+        <div class="cs-inner">
+          <div class="section-heading" data-reveal>
+            <div class="section-heading__group">
+              <span class="eyebrow">O SITE PÚBLICO</span>
+              <h2 class="section-heading__title">A vitrine que o painel alimenta</h2>
+            </div>
+          </div>
+          <figure class="cs-shot" data-reveal>
+            <img src="assets/images/visao-imoveis/home.jpg" alt="Página inicial do site Visão Imóveis com a busca por tipo, cidade, bairro e zona sobre uma foto aérea de Cachoeira de Minas" width="1440" height="900" loading="lazy" />
+            <figcaption>Página inicial, com a busca por tipo, cidade, bairro e zona.</figcaption>
+          </figure>
+          <div class="cs-gallery" data-reveal>
+            <div class="cs-gallery__col">
+              <figure class="cs-shot"><img src="assets/images/visao-imoveis/busca.jpg" alt="Página de busca com filtros avançados à esquerda e cards de imóveis com foto, preço e características" width="1440" height="900" loading="lazy" /><figcaption>Busca com filtros combináveis.</figcaption></figure>
+              <figure class="cs-shot"><img src="assets/images/visao-imoveis/imovel.jpg" alt="Ficha de um imóvel com galeria de fotos em mosaico" width="1440" height="900" loading="lazy" /><figcaption>Ficha do imóvel, com galeria e marca d'água aplicada nas fotos.</figcaption></figure>
+            </div>
+            <figure class="cs-shot"><img src="assets/images/visao-imoveis/mobile.jpg" alt="Página inicial no celular" width="780" height="1688" loading="lazy" /><figcaption>Celular.</figcaption></figure>
+          </div>
+          <div class="cs-actions" data-reveal>
+            <a class="btn btn--solid" href="https://www.visaoimoveisminas.com.br" target="_blank" rel="noopener noreferrer">
+              Ver o site no ar
+              <span class="btn__trailing" aria-hidden="true">↗</span>
+            </a>
+            <a class="btn btn--ghost" href="https://github.com/Kindacid/SergioVisaoSite" target="_blank" rel="noopener noreferrer">
+              Repositório no GitHub
+              <span class="btn__trailing" aria-hidden="true">↗</span>
+            </a>
+            <a class="btn btn--ghost" href="index.html#projetos">← Outros projetos</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__about">
+          <span class="wordmark wordmark--md">
+            <span class="wordmark__avatar" aria-hidden="true">MV</span>
+            <span class="wordmark__text">
+              <span class="wordmark__name">Mário Vieira</span>
+              <span class="wordmark__role">Analista de Dados &amp; Dev</span>
+            </span>
+          </span>
+          <p class="site-footer__note">Dados que viram decisão. Código que entra no ar.</p>
+        </div>
+        <div class="site-footer__columns">
+          <div class="site-footer__column">
+            <span class="site-footer__column-title">Navegação</span>
+            <a href="index.html#sobre">Sobre</a>
+            <a href="index.html#experiencia">Experiência</a>
+            <a href="index.html#projetos">Projetos</a>
+          </div>
+          <div class="site-footer__column">
+            <span class="site-footer__column-title">Contato</span>
+            <a href="https://wa.me/5511994847936" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="mailto:mariosvfelix@gmail.com">E-mail</a>
+            <a href="https://www.linkedin.com/in/mariosvieiraf/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/Kindacid" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="site-footer__bottom">© <span data-year>2026</span> Mário Vieira. Todos os direitos reservados.</div>
+    </footer>
+
+  </div>
+
+  <div class="theme-wipe" data-theme-wipe aria-hidden="true"></div>
+
+  <script>
+    document.querySelector("[data-year]").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
